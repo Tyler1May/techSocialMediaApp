@@ -22,9 +22,9 @@ class ViewController: UIViewController {
 //        Uncomment the three lines below and enter your credentials to
 //        automatically sign in everytime you launch the app.
         
-//        emailTextField.text = ""
-//        passwordTextField.text = ""
-//        signInButtonTapped([])
+        emailTextField.text = "TYLER.MAY1143@STU.MTEC.EDU"
+        passwordTextField.text = "2ecefba6-43e3-4658-a7b9-d0b02a719f38"
+        signInButtonTapped([])
         #endif
     }
 
@@ -42,6 +42,8 @@ class ViewController: UIViewController {
                     let viewController = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "userSignedIn")
                     let viewControllers = [viewController]
                     self.navigationController?.setViewControllers(viewControllers, animated: true)
+//                    print(User.current?.secret)
+//                    print(User.current?.userUUID)
                 }
             } catch {
                 print(error)

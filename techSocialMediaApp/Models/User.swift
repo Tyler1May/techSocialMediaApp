@@ -17,3 +17,4 @@ struct User: Decodable, Encodable {
     
     static var current: User?
 }
+
