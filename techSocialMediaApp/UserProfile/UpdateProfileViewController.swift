@@ -10,6 +10,7 @@ import UIKit
 class UpdateProfileViewController: UIViewController {
     
     weak var updateProfileDelegate: UpdateProfileDelegate?
+    
 
     @IBOutlet var usernameTextField: UITextField!
     @IBOutlet var bioTextField: UITextField!

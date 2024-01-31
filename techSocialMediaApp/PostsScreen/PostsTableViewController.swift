@@ -7,16 +7,27 @@
 
 import UIKit
 
-class PostsTableViewController: UITableViewController {
+class PostsTableViewController: UITableViewController, PostIdDelegate{
+    
+    let toCommentsIdentifier = "toComments"
+    func commentButtonTapped(postId: Int) {
+        performSegue(withIdentifier: toCommentsIdentifier, sender: postId)
+    }
+    var postCell: PostTableViewCell?
+    func likeButtonTapped(postId: Int) {
+        updateLikes(with: postId)
+    }
+    
     
     var posts: [Post] = []
-
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(PostTableViewCell.self, forCellReuseIdentifier: PostTableViewCell.reuseIdentifier)
+        tableView.register(UINib(nibName: "PostTableViewCell", bundle: nil), forCellReuseIdentifier: PostTableViewCell.reuseIdentifier)
         fetchPosts()
-//        tableView.reloadData()
+        tableView.reloadData()
+        self.title = "Explore Posts"
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -27,6 +38,26 @@ class PostsTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         fetchPosts()
+        tableView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == toCommentsIdentifier, let vc = segue.destination as? CommentsViewController, let postId = sender as? Int else {
+            return
+        }
+        vc.postId = postId
+    }
+    
+    func updateLikes(with postid: Int) {
+        Task {
+            do {
+                try await API.updateLikes(with: postid)
+                fetchPosts()
+                tableView.reloadData()
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
     }
     
     func fetchPosts() {
@@ -57,8 +88,13 @@ class PostsTableViewController: UITableViewController {
         
         let post = posts[indexPath.row]
         cell.configure(with: post)
+        cell.delegate = self
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
 }

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="commentCell" rowHeight="140" id="5Vz-yP-cm0" customClass="CommentTableViewCell" customModule="techSocialMediaApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="140"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5Vz-yP-cm0" id="XKj-Yt-ycr">
+                <rect key="frame" x="0.0" y="0.0" width="400" height="140"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Btu-N3-mWT">
+                        <rect key="frame" x="10" y="9.9999999999999982" width="380" height="20.333333333333329"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MVq-04-tHD">
+                                <rect key="frame" x="0.0" y="0.0" width="268.33333333333331" height="20.333333333333332"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4sy-24-9pI">
+                                <rect key="frame" x="273.33333333333331" y="0.0" width="106.66666666666669" height="20.333333333333332"/>
+                                <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Body" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qix-5Y-4OD">
+                        <rect key="frame" x="10" y="35.333333333333336" width="380" height="99.666666666666657"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Qix-5Y-4OD" firstAttribute="leading" secondItem="XKj-Yt-ycr" secondAttribute="leading" constant="10" id="6OD-4c-zm3"/>
+                    <constraint firstItem="Btu-N3-mWT" firstAttribute="top" secondItem="XKj-Yt-ycr" secondAttribute="top" constant="10" id="90n-eh-ECY"/>
+                    <constraint firstAttribute="bottom" secondItem="Qix-5Y-4OD" secondAttribute="bottom" constant="5" id="E4B-to-dAq"/>
+                    <constraint firstItem="Qix-5Y-4OD" firstAttribute="top" secondItem="Btu-N3-mWT" secondAttribute="bottom" constant="5" id="KYa-RN-vQp"/>
+                    <constraint firstAttribute="trailing" secondItem="Btu-N3-mWT" secondAttribute="trailing" constant="10" id="M6r-zQ-XsA"/>
+                    <constraint firstAttribute="trailing" secondItem="Qix-5Y-4OD" secondAttribute="trailing" constant="10" id="dJO-X6-FLz"/>
+                    <constraint firstItem="Btu-N3-mWT" firstAttribute="leading" secondItem="XKj-Yt-ycr" secondAttribute="leading" constant="10" id="ihY-E0-wHy"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="bodyLabel" destination="Qix-5Y-4OD" id="fGj-1y-MKk"/>
+                <outlet property="dateLabel" destination="4sy-24-9pI" id="EMM-Zu-Xzh"/>
+                <outlet property="usernameLabel" destination="MVq-04-tHD" id="SbW-1d-t3T"/>
+            </connections>
+            <point key="canvasLocation" x="258.01526717557249" y="-11.267605633802818"/>
+        </tableViewCell>
+    </objects>
+</document>
