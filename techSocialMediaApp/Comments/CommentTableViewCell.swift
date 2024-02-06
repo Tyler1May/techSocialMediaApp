@@ -29,7 +29,18 @@ class CommentTableViewCell: UITableViewCell {
     
     func configure(with comment: Comment) {
         usernameLabel.text = comment.userName
+        usernameLabel.textColor = AppTheme.textColor
         dateLabel.text = comment.createdDate
+        dateLabel.textColor = AppTheme.textColor
         bodyLabel.text = comment.body
+        bodyLabel.textColor = AppTheme.textColor
+        contentView.backgroundColor = AppTheme.secondaryColor
+        
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 0))
     }
 }

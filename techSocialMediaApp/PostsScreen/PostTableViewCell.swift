@@ -28,7 +28,6 @@ class PostTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -49,18 +48,33 @@ class PostTableViewCell: UITableViewCell {
     
     func configure(with post: Post) {
         postTitleLabel.text = post.title
+        postTitleLabel.textColor = AppTheme.textColor
         authorUsernameLabel.text = post.authorUserName
+        authorUsernameLabel.textColor = AppTheme.textColor
         bodyLabel.text = post.body
+        bodyLabel.textColor = AppTheme.textColor
         likeButton.setTitle("\(post.likes)", for: .normal)
         commentButton.setTitle("\(post.numComments)", for: .normal)
+        commentButton.tintColor = AppTheme.textColor
         postDateLabel.text = post.createdDate
+        postDateLabel.textColor = AppTheme.textColor
         self.selectedPostId = post.postid
         self.like = post.userLiked
         if like {
             likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            likeButton.tintColor = UIColor.systemPink
         } else {
             likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
+            likeButton.tintColor = AppTheme.textColor
         }
+        contentView.backgroundColor = AppTheme.secondaryColor
+        contentView.layer.cornerRadius = 10
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
     }
 
 }

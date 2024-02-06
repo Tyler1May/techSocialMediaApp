@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PostsTableViewController: UITableViewController, PostIdDelegate{
+class PostsTableViewController: UITableViewController, PostIdDelegate {
     
     let toCommentsIdentifier = "toComments"
     func commentButtonTapped(postId: Int) {
@@ -23,11 +23,9 @@ class PostsTableViewController: UITableViewController, PostIdDelegate{
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.register(UINib(nibName: "PostTableViewCell", bundle: nil), forCellReuseIdentifier: PostTableViewCell.reuseIdentifier)
         fetchPosts()
         tableView.reloadData()
-        self.title = "Explore Posts"
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -37,6 +35,8 @@ class PostsTableViewController: UITableViewController, PostIdDelegate{
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        AppTheme.setPrimaryBackgroundColor(for: self.view)
+        
         fetchPosts()
         tableView.reloadData()
     }
@@ -46,6 +46,7 @@ class PostsTableViewController: UITableViewController, PostIdDelegate{
             return
         }
         vc.postId = postId
+        vc.sheetPresentationController?.detents = [.medium(),.large(),]
     }
     
     func updateLikes(with postid: Int) {
@@ -77,7 +78,7 @@ class PostsTableViewController: UITableViewController, PostIdDelegate{
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+        
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return posts.count
@@ -89,6 +90,7 @@ class PostsTableViewController: UITableViewController, PostIdDelegate{
         let post = posts[indexPath.row]
         cell.configure(with: post)
         cell.delegate = self
+        cell.backgroundColor = AppTheme.primaryColor
         
         return cell
     }
@@ -96,5 +98,7 @@ class PostsTableViewController: UITableViewController, PostIdDelegate{
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+
 
 }

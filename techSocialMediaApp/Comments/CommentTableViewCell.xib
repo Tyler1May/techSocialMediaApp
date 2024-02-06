@@ -50,6 +50,7 @@
                     <constraint firstItem="Btu-N3-mWT" firstAttribute="leading" secondItem="XKj-Yt-ycr" secondAttribute="leading" constant="10" id="ihY-E0-wHy"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="bodyLabel" destination="Qix-5Y-4OD" id="fGj-1y-MKk"/>
                 <outlet property="dateLabel" destination="4sy-24-9pI" id="EMM-Zu-Xzh"/>

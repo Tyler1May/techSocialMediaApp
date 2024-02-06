@@ -12,17 +12,33 @@ class UpdateProfileViewController: UIViewController {
     weak var updateProfileDelegate: UpdateProfileDelegate?
     
 
+    @IBOutlet var usernameTitleLabel: UILabel!
     @IBOutlet var usernameTextField: UITextField!
+    @IBOutlet var bioTitleLabel: UILabel!
     @IBOutlet var bioTextField: UITextField!
+    @IBOutlet var techTitleLabel: UILabel!
     @IBOutlet var techInterestTextField: UITextField!
+    @IBOutlet var saveButton: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        AppTheme.setPrimaryBackgroundColor(for: self.view)
+        
         usernameTextField.text = UserProfile.current?.userName
+        usernameTitleLabel.textColor = AppTheme.textColor
+        usernameTextField.textColor = AppTheme.textColor
+        usernameTextField.backgroundColor = AppTheme.secondaryColor
         bioTextField.text = UserProfile.current?.bio
+        bioTitleLabel.textColor = AppTheme.textColor
+        bioTextField.textColor = AppTheme.textColor
+        bioTextField.backgroundColor = AppTheme.secondaryColor
         techInterestTextField.text = UserProfile.current?.techInterests
+        techTitleLabel.textColor = AppTheme.textColor
+        techInterestTextField.backgroundColor = AppTheme.secondaryColor
+        techInterestTextField.textColor = AppTheme.textColor
+        saveButton.tintColor = AppTheme.secondaryColor
         
     }
     

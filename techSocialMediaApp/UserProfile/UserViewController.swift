@@ -22,12 +22,26 @@ class UserViewController: UIViewController, UpdateProfileDelegate {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var emailLabel: UILabel!
     @IBOutlet var bioDetailLabel: UILabel!
+    @IBOutlet var bioTitleLabel: UILabel!
     @IBOutlet var techInterestLabel: UILabel!
+    @IBOutlet var techInterestTitleLabel: UILabel!
     
     @IBOutlet var postCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        AppTheme.setPrimaryBackgroundColor(for: self.view)
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: AppTheme.textColor]
+        navigationController?.navigationBar.topItem?.rightBarButtonItem?.tintColor = AppTheme.textColor
+        navigationController?.navigationBar.topItem?.leftBarButtonItem?.tintColor = AppTheme.textColor
+        nameLabel.textColor = AppTheme.textColor
+        emailLabel.textColor = AppTheme.textColor
+        bioTitleLabel.textColor = AppTheme.textColor
+        bioDetailLabel.textColor = AppTheme.textColor
+        techInterestTitleLabel.textColor = AppTheme.textColor
+        techInterestLabel.textColor = AppTheme.textColor
+        
         fetchProfile()
         updateUI()
         postCollectionView.register(UINib(nibName: "PostCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: PostCollectionViewCell.reuseIdentifier)
@@ -158,9 +172,7 @@ extension UserViewController: UICollectionViewDataSource, UICollectionViewDelega
         
         let post = userPosts[indexPath.item]
         cell.configure(with: post)
-        cell.layer.cornerRadius = 5
-        cell.layer.borderWidth = 2
-        cell.layer.borderColor = CGColor(red: 0, green: 0, blue: 0, alpha: 1)
+        
         return cell
     }
     

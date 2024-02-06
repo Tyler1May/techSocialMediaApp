@@ -19,6 +19,7 @@
 		F70B0C832B5AE66900790E1D /* UserPostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70B0C822B5AE66900790E1D /* UserPostCollectionViewCell.swift */; };
 		F70B0C862B5DA41400790E1D /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70B0C852B5DA41400790E1D /* Profile.swift */; };
 		F70B0C882B5EBECE00790E1D /* UpdateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70B0C872B5EBECE00790E1D /* UpdateProfileViewController.swift */; };
+		F798ED7C2B6D46A6000EA0B4 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F798ED7B2B6D46A6000EA0B4 /* AppTheme.swift */; };
 		F79F5E862B5ACD56002E37F3 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79F5E852B5ACD56002E37F3 /* Post.swift */; };
 		F79F5E882B5ACE0E002E37F3 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79F5E872B5ACE0E002E37F3 /* Comment.swift */; };
 		F79F5E8A2B5AD478002E37F3 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79F5E892B5AD478002E37F3 /* UserViewController.swift */; };
@@ -49,6 +50,7 @@
 		F70B0C822B5AE66900790E1D /* UserPostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostCollectionViewCell.swift; sourceTree = "<group>"; };
 		F70B0C852B5DA41400790E1D /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		F70B0C872B5EBECE00790E1D /* UpdateProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileViewController.swift; sourceTree = "<group>"; };
+		F798ED7B2B6D46A6000EA0B4 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		F79F5E852B5ACD56002E37F3 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		F79F5E872B5ACE0E002E37F3 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		F79F5E892B5AD478002E37F3 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				A3DFFA472901B8F400A28B8C /* AppDelegate.swift */,
 				A3DFFA492901B8F400A28B8C /* SceneDelegate.swift */,
 				A3DFFA4B2901B8F400A28B8C /* ViewController.swift */,
+				F798ED7B2B6D46A6000EA0B4 /* AppTheme.swift */,
 				F7DACD992B6809DA00FF2005 /* Comments */,
 				F7CC4E442B6166BA00217312 /* PostsScreen */,
 				F70B0C842B5AE78300790E1D /* UserProfile */,
@@ -259,6 +262,7 @@
 				F79F5E8A2B5AD478002E37F3 /* UserViewController.swift in Sources */,
 				F7DACD982B6808CE00FF2005 /* CommentsViewController.swift in Sources */,
 				A3DFFA4C2901B8F400A28B8C /* ViewController.swift in Sources */,
+				F798ED7C2B6D46A6000EA0B4 /* AppTheme.swift in Sources */,
 				A3DFFA482901B8F400A28B8C /* AppDelegate.swift in Sources */,
 				F7E4960E2B641C1300E73BBA /* CreatePost.swift in Sources */,
 				F70B0C832B5AE66900790E1D /* UserPostCollectionViewCell.swift in Sources */,

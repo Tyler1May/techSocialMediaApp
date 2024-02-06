@@ -14,11 +14,20 @@ class CommentsViewController: UIViewController {
     private var post: Post?
     var postId: Int = 0
     @IBOutlet var commentTextField: UITextField!
+    @IBOutlet var addCommentButton: UIButton!
+    @IBOutlet var commentTitleLabel: UILabel!
     
     @IBOutlet var commentTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        AppTheme.setPrimaryBackgroundColor(for: self.view)
+        commentTextField.backgroundColor = AppTheme.secondaryColor
+        commentTextField.textColor = AppTheme.textColor
+        commentTitleLabel.textColor = AppTheme.textColor
+        addCommentButton.backgroundColor = AppTheme.buttonColor
+        addCommentButton.configuration?.baseForegroundColor = AppTheme.textColor
         
         commentTableView.register(UINib(nibName: "CommentTableViewCell", bundle: nil), forCellReuseIdentifier: CommentTableViewCell.reuseIdentifier)
         

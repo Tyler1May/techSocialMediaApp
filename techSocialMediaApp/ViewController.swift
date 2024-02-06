@@ -12,11 +12,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet var signInButton: UIButton!
+    @IBOutlet var appTitleLabel: UILabel!
     
     var authenticationController = AuthenticationController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = AppTheme.primaryColor
+        emailTextField.backgroundColor = AppTheme.secondaryColor
+        passwordTextField.backgroundColor = AppTheme.secondaryColor
+        appTitleLabel.textColor = AppTheme.textColor
+        signInButton.titleLabel?.tintColor = AppTheme.textColor
+        
         passwordTextField.isSecureTextEntry = true
         #if DEBUG
 //        Uncomment the three lines below and enter your credentials to
